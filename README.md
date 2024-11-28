@@ -8,7 +8,7 @@
 <!-- badges: end -->
 
 The goal of alchemeR is to provide tools to access Alchemer survey data
-from their API and pull into an R ennvironment. More informtion on the
+from their API and pull into an R environment. More informtion on the
 Alchemer API and set up can be found here:
 <https://apihelp.alchemer.com/help>
 
