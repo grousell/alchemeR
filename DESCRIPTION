@@ -8,3 +8,5 @@ Description: A series of tools to pull data from the Alchemer survey system.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/grousell/alchemeR
+BugReports: https://github.com/grousell/alchemeR/issues
