@@ -1,4 +1,5 @@
 #' Fetch Alchemer Data Dictionary
+#'
 #' A function that retrieves a data dictionary from an Alchemer survey.
 #' Requires user to have set up an API with Alchemer, including
 #' a token and secret key. If custom reporting values are used in Alchemer, then

@@ -1,4 +1,5 @@
 #' Fetch Alchemer Survey Data
+#'
 #' This function retrieves survey data from an Alchemer account and saves a .csv file in a project folder.
 #' Requires user to have set up an API with Alchemer, including a token and secret key
 #'

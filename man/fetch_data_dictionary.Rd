@@ -2,11 +2,7 @@
 % Please edit documentation in R/fetch_data_dictionary.R
 \name{fetch_data_dictionary}
 \alias{fetch_data_dictionary}
-\title{Fetch Alchemer Data Dictionary
-A function that retrieves a data dictionary from an Alchemer survey.
-Requires user to have set up an API with Alchemer, including
-a token and secret key. If custom reporting values are used in Alchemer, then
-the function will download the custome value.}
+\title{Fetch Alchemer Data Dictionary}
 \usage{
 fetch_data_dictionary(survey_id, token, secret_key)
 }
@@ -21,7 +17,6 @@ fetch_data_dictionary(survey_id, token, secret_key)
 A data frame of question numbers and question labels
 }
 \description{
-Fetch Alchemer Data Dictionary
 A function that retrieves a data dictionary from an Alchemer survey.
 Requires user to have set up an API with Alchemer, including
 a token and secret key. If custom reporting values are used in Alchemer, then
