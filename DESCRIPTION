@@ -1,0 +1,10 @@
+Package: alchemeR
+Type: Package
+Title: alchemeR
+Version: 0.1.0
+Author: Greg Rousell
+Maintainer: Greg rousell <grousell@gmail.com>
+Description: A series of tools to pull data from the Alchemer survey system. 
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
