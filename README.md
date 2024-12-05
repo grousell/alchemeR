@@ -43,7 +43,7 @@ the data set, the longer the API call can take. This prevents the needs
 to constantly make an API call when conducting analyses.
 
 The `survey_name` argument can include folders. For example,
-`data/survey_name` will save the .csv in the data subfolder.
+`"data/survey_name"` will save the .csv in the data subfolder.
 
 ``` r
 library(alchemeR)

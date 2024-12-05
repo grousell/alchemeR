@@ -47,7 +47,7 @@ all_surveys(
 ### Download survey data:
 This function downloads a .csv into the working directory. The larger the data set, the longer the API call can take. This prevents the needs to constantly make an API call when conducting analyses.
 
-The `survey_name` argument can include folders. For example, `data/survey_name` will save the .csv in the data subfolder.  
+The `survey_name` argument can include folders. For example, `"data/survey_name"` will save the .csv in the data subfolder.  
 
 ```{r fetch_survey, eval=FALSE}
 library(alchemeR)
