@@ -4,7 +4,7 @@
 \alias{fetch_survey}
 \title{Fetch Alchemer Survey Data}
 \usage{
-fetch_survey(survey_id, token, secret_key)
+fetch_survey(survey_id, token, secret_key, survey_name = "survey_data")
 }
 \arguments{
 \item{survey_id}{Alchemer survey number, retrieved from survey URL}
@@ -12,6 +12,8 @@ fetch_survey(survey_id, token, secret_key)
 \item{token}{Alchemer API token (https://apihelp.alchemer.com/help/authentication)}
 
 \item{secret_key}{Alchemer API secret key}
+
+\item{survey_name}{Name of survey}
 }
 \value{
 Downloaded file of survey responses
@@ -21,5 +23,5 @@ This function retrieves survey data from an Alchemer account and saves a .csv fi
 Requires user to have set up an API with Alchemer, including a token and secret key
 }
 \examples{
-# alchemer_survey("SURVEY_ID", <YOUR-ALCHEMER_TOKEN>, <YOUR-ALCHEMER_SECRET_KEY> )
+# alchemer_survey("SURVEY_ID", <YOUR-ALCHEMER_TOKEN>, <YOUR-ALCHEMER_SECRET_KEY>, "SURVEY_NAME")
 }

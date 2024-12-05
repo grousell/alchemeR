@@ -12,14 +12,17 @@
 #' @param secret_key
 #' Alchemer API secret key
 #'
+#' @param survey_name
+#' Name of survey
+#'
 #' @return
 #' Downloaded file of survey responses
 #' @export
 #'
 #' @examples
-#' # alchemer_survey("SURVEY_ID", <YOUR-ALCHEMER_TOKEN>, <YOUR-ALCHEMER_SECRET_KEY> )
+#' # alchemer_survey("SURVEY_ID", <YOUR-ALCHEMER_TOKEN>, <YOUR-ALCHEMER_SECRET_KEY>, "SURVEY_NAME")
 
-fetch_survey <- function(survey_id, token, secret_key){
+fetch_survey <- function(survey_id, token, secret_key, survey_name = "survey_data"){
 
   survey_url <- glue::glue("https://api.alchemer-ca.com/v5/survey/{survey_id}/surveyresponse")
   survey_req <- httr2::request(survey_url)
@@ -59,9 +62,9 @@ fetch_survey <- function(survey_id, token, secret_key){
 
   utils::write.csv(
     new_df,
-    file = "survey_data.csv",
+    file = glue::glue("{survey_name}.csv"),
     row.names = FALSE
-    )
+  )
 }
 
 

@@ -42,13 +42,17 @@ This function downloads a .csv into the working directory. The larger
 the data set, the longer the API call can take. This prevents the needs
 to constantly make an API call when conducting analyses.
 
+The `survey_name` argument can include folders. For example,
+`data/survey_name` will save the .csv in the data subfolder.
+
 ``` r
 library(alchemeR)
 
 fetch_survey(
-  "50269987", 
+  "SURVEY_ID", 
   keyring::key_get("alchemer", "token"),
-  keyring::key_get("alchemer", "secret")
+  keyring::key_get("alchemer", "secret"),
+  "SURVEY_NAME"
   )
 
 df <- read.csv("survey_data.csv")
@@ -59,7 +63,7 @@ df <- read.csv("survey_data.csv")
 ``` r
 
 survey_data_dictionary <- fetch_data_dictionary(
-  "50269987", 
+  "SURVEY_ID", 
   keyring::key_get("alchemer", "token"),
   keyring::key_get("alchemer", "secret")
 )
