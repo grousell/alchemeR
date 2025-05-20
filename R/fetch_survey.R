@@ -27,7 +27,9 @@ fetch_survey <- function(survey_id, token, secret_key, survey_name = "survey_dat
   survey_url <- glue::glue("https://api.alchemer-ca.com/v5/survey/{survey_id}/surveyresponse")
   survey_req <- httr2::request(survey_url)
 
-  for (i in c(1:250)) {
+  vars <- c( "id", "status", "is_test_data", "date_submitted", "response_time")
+
+  for (i in c(1:300)) {
 
     survey <- survey_req |>
       httr2::req_url_query(
@@ -39,14 +41,20 @@ fetch_survey <- function(survey_id, token, secret_key, survey_name = "survey_dat
 
     temp_survey_df <- jsonlite::fromJSON(survey$url, flatten = TRUE)
 
+    is_sso <- any(stringr::str_detect (names(temp_survey_df$data), "ssoconfirmation"))
+
     if (length(temp_survey_df$data) == 0) {
       break
     } else {
-      temp_df <- temp_survey_df$data |>
-        dplyr::select(
-          c(1, 3:5, 8, 14),
-          tidyr::ends_with("answer")
-        )
+      if(is_sso == TRUE){
+        temp_df <- temp_survey_df$data |>
+          dplyr::select(tidyr::all_of(vars),
+                        tidyr::starts_with("url_variable"),
+                        tidyr::ends_with("answer"))
+      } else{
+        temp_df <- temp_survey_df$data |>
+          dplyr::select(tidyr::all_of(vars), tidyr::ends_with("answer"))
+      }
     }
 
     if(!exists("new_df")){
