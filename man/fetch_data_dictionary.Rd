@@ -4,7 +4,7 @@
 \alias{fetch_data_dictionary}
 \title{Fetch Alchemer Data Dictionary}
 \usage{
-fetch_data_dictionary(survey_id, token, secret_key)
+fetch_data_dictionary(survey_id, token = "token", secret_key = "secret_key")
 }
 \arguments{
 \item{survey_id}{Alchemer survey number, retrieved from survey URL}

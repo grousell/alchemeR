@@ -4,7 +4,12 @@
 \alias{fetch_survey}
 \title{Fetch Alchemer Survey Data}
 \usage{
-fetch_survey(survey_id, token, secret_key, survey_name = "survey_data")
+fetch_survey(
+  survey_id,
+  token = "token",
+  secret_key = "secret_key",
+  survey_name = "survey_data"
+)
 }
 \arguments{
 \item{survey_id}{Alchemer survey number, retrieved from survey URL}
