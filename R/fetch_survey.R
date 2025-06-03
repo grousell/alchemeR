@@ -22,7 +22,7 @@
 #' @examples
 #' # alchemer_survey("SURVEY_ID", <YOUR-ALCHEMER_TOKEN>, <YOUR-ALCHEMER_SECRET_KEY>, "SURVEY_NAME")
 
-fetch_survey <- function(survey_id, token, secret_key, survey_name = "survey_data"){
+fetch_survey <- function(survey_id, token = "token", secret_key = "secret_key", survey_name = "survey_data"){
 
   survey_url <- glue::glue("https://api.alchemer-ca.com/v5/survey/{survey_id}/surveyresponse")
   survey_req <- httr2::request(survey_url)
