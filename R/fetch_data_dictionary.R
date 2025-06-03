@@ -21,7 +21,7 @@
 #' @examples
 #' # fetch_data_dictionary("SURVEY_ID","YOUR-ALCHEMER_TOKEN","YOUR-ALCHEMER_SECRET_KEY")
 
-fetch_data_dictionary <- function(survey_id, token, secret_key){
+fetch_data_dictionary <- function(survey_id, token = "token", secret_key = "secret_key"){
 
   survey_url <- glue::glue("https://api.alchemer-ca.com/v5/survey/{survey_id}/surveyquestion")
   survey_req <- httr2::request(survey_url)
