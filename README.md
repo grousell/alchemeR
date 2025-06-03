@@ -4,8 +4,7 @@
 # alchemeR
 
 <!-- badges: start -->
-
-[![R-CMD-check](https://github.com/grousell/alchemeR/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/grousell/alchemeR/actions/workflows/R-CMD-check.yaml)
+[![R](https://github.com/grousell/alchemeR/actions/workflows/r.yml/badge.svg)](https://github.com/grousell/alchemeR/actions/workflows/r.yml)
 <!-- badges: end -->
 
 The goal of alchemeR is to provide tools to access Alchemer survey data
