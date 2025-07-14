@@ -34,8 +34,13 @@ fetch_data_dictionary <- function(survey_id, token = "token", secret_key = "secr
       page = 1
     )
 
-  temp_df <- jsonlite::fromJSON(survey$url, flatten = TRUE)
-  temp_df <- temp_df$data
+  temp_df <- jsonlite::fromJSON(survey$url, flatten = TRUE)$data
+  
+  # Coerce all columns in the nested data frames to character vectors
+  temp_df$options <- lapply(temp_df$options, function(x) {
+    if (is.null(x)) return(NULL)
+    as.data.frame(lapply(x, as.character), stringsAsFactors = FALSE)
+  })
 
   temp_df |>
     dplyr::select(id,
